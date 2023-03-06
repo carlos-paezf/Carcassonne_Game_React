@@ -1,5 +1,6 @@
 import { createContext } from "react";
 import { GameInfoType, ToastPropsType } from "../types";
+import { initialGameInfo } from "../constants";
 
 
 type GameInfoContextType = {
@@ -9,27 +10,18 @@ type GameInfoContextType = {
 
 
 export const GameInfoContext = createContext<GameInfoContextType>( {
-    gameInfo: {
-        tilesInDeck: 0,
-        turn: 0,
-        numberDiscards: 0,
-        score: 0,
-        settingsGame: {
-            playerName: '',
-            boardSize: 0
-        }
-    },
+    gameInfo: initialGameInfo,
     setGameInfo: () => { }
 } );
 
 
 type ToastContextType = {
     toasts: ToastPropsType[],
-    setToasts: React.Dispatch<React.SetStateAction<ToastPropsType[]>>;
+    addToast: ( toast: ToastPropsType ) => void;
 };
 
 
 export const ToastContext = createContext<ToastContextType>( {
     toasts: [],
-    setToasts: () => { }
+    addToast: () => { }
 } );
