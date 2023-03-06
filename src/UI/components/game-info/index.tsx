@@ -17,10 +17,12 @@ export const GameInfo: FC = () => {
             </thead>
 
             <tbody>
-                <td>{ gameInfo.tilesInDeck }</td>
-                <td>{ gameInfo.turn }</td>
-                <td>{ gameInfo.numberDiscards }</td>
-                <td>{ gameInfo.score }</td>
+                <tr>
+                    <td>{ gameInfo.tilesInDeck }</td>
+                    <td>{ gameInfo.turn }</td>
+                    <td>{ gameInfo.numberDiscards }</td>
+                    <td>{ gameInfo.score }</td>
+                </tr>
             </tbody>
         </table>
     );
