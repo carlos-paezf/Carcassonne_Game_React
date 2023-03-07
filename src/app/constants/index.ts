@@ -1,7 +1,7 @@
-import { GameInfoType } from "../types";
+import { IGameInfo } from "../types";
 
 
-export const initialGameInfo: GameInfoType = {
+export const initialGameInfo: IGameInfo = {
     tilesInDeck: 0,
     turn: 0,
     numberDiscards: 5,

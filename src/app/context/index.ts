@@ -1,11 +1,11 @@
 import { createContext } from "react";
-import { GameInfoType, ToastPropsType } from "../types";
+import { IGameInfo, IToastProps } from "../types";
 import { initialGameInfo } from "../constants";
 
 
 type GameInfoContextType = {
-    gameInfo: GameInfoType;
-    setGameInfo: React.Dispatch<React.SetStateAction<GameInfoType>>;
+    gameInfo: IGameInfo;
+    setGameInfo: React.Dispatch<React.SetStateAction<IGameInfo>>;
 };
 
 
@@ -16,8 +16,8 @@ export const GameInfoContext = createContext<GameInfoContextType>( {
 
 
 type ToastContextType = {
-    toasts: ToastPropsType[],
-    addToast: ( toast: ToastPropsType ) => void;
+    toasts: IToastProps[],
+    addToast: ( toast: IToastProps ) => void;
 };
 
 
