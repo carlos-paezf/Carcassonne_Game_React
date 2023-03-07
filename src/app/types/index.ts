@@ -1,19 +1,26 @@
-export type GameInfoType = {
+export interface IGameInfo {
     tilesInDeck: number;
     turn: number;
     numberDiscards: number;
     score: number;
-    settingsGame: SettingsGameType;
+    settingsGame: ISettingsGameType;
 };
 
 
-export type SettingsGameType = {
+export interface ISettingsGameType {
     playerName: string;
     boardSize: number;
 };
 
 
-export type ToastPropsType = {
+export interface IToastProps {
     message: string;
-    type?: string;
+    type?: ToastType;
 };
+
+
+export enum ToastType {
+    ERROR = 'error',
+    INFO = 'info',
+    SUCCESS = 'success'
+}
