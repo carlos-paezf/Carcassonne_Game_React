@@ -10,10 +10,7 @@ const Toast: FC<IToastProps> = ( { message, type = ToastType.ERROR } ) => {
     useEffect( () => {
         const timeout = setTimeout( () => setShow( false ), 5000 );
 
-        return () => {
-            clearInterval( timeout );
-            toastRef.current?.remove();
-        };
+        return () => clearInterval( timeout );
     }, [] );
 
     return (
