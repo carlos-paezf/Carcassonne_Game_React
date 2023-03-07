@@ -1,5 +1,5 @@
 import { RoadDirection, TileType } from "../constants";
-import { Tile } from "./Tile";
+import { Tile } from "./tile";
 import { VonNeumannNeighborhoods } from "./von-neumann-neighborhoods";
 
 

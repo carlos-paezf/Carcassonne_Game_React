@@ -1,7 +1,7 @@
 import { IncrementType, TILES_PER_HAND, TilePoint, TileType } from "../constants";
-import { Board } from "./Board";
+import { Board } from "./board";
 import { Deck } from './deck';
-import { Tile } from "./Tile";
+import { Tile } from "./tile";
 import { VonNeumannNeighborhoods, getNeighborhoodParams } from './von-neumann-neighborhoods';
 
 export class Player {

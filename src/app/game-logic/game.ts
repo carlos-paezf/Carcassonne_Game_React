@@ -1,10 +1,10 @@
-import { Board } from "./Board";
+import { Board } from "./board";
 import { Deck } from "./deck";
 import { Player } from "./player";
-import { Tile } from "./Tile";
+import { Tile } from "./tile";
 
 
-export class GameV2 {
+export class Game {
     private readonly _board: Board;
     private readonly _deck: Deck;
     private readonly _player: Player;
