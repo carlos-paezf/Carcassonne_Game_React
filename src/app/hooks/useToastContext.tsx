@@ -15,6 +15,6 @@ export const useToastContext = () => {
     };
 
     return {
-        toasts, setToasts
+        toasts, addToast
     };
 };
