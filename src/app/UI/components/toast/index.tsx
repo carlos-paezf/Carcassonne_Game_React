@@ -1,6 +1,7 @@
-import { FC, useContext, useEffect, useState, useRef } from 'react';
-import { ToastContext } from '../../../context/index';
-import { IToastProps, ToastType } from '../../../types';
+import { FC, useEffect, useRef, useState } from 'react';
+import { ToastType } from '../../../constants';
+import { useToast } from '../../../reducer/toast-reducer';
+import { IToastProps } from '../../../types';
 
 
 /**
@@ -34,7 +35,7 @@ const Toast: FC<IToastProps> = ( { message, type = ToastType.ERROR } ) => {
  * @returns A function that returns a div with a list of toasts.
  */
 export const ToastContainer: FC = () => {
-    const { toasts } = useContext( ToastContext );
+    const toasts = useToast();
 
     return (
         <div id="toasts-container">
