@@ -1,3 +1,6 @@
+import { ReactNode } from "react";
+import { ToastType } from "../constants";
+
 export interface IGameInfo {
     tilesInDeck: number;
     turn: number;
@@ -19,8 +22,23 @@ export interface IToastProps {
 };
 
 
-export enum ToastType {
-    ERROR = 'error',
-    INFO = 'info',
-    SUCCESS = 'success'
+export interface ICoordTile {
+    posX: number,
+    posY: number;
+}
+
+
+export type Props = {
+    children: ReactNode;
+};
+
+
+export interface IReducerAction<T> {
+    type: string;
+    payload: T;
+}
+
+
+export interface IActionHandlers<T> {
+    [ key: string ]: ( object: T, payload: Partial<T> ) => T;
 }
