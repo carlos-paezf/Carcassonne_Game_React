@@ -13,6 +13,13 @@ export const initialGameInfo: IGameInfo = {
 };
 
 
+export enum ToastType {
+    ERROR = 'error',
+    INFO = 'info',
+    SUCCESS = 'success'
+}
+
+
 export const TILES_PER_HAND = 4;
 
 
@@ -52,3 +59,10 @@ export enum IncrementType {
     BY_CITY_CHAIN = 'BY_CITY_CHAIN',
     BY_NEIGHBORING_ABBEY = 'BY_NEIGHBORING_ABBEY'
 }
+
+
+export const tilesProbability = {
+    roadProbability: tileInterval.road,
+    cityProbability: tileInterval.city,
+    abbeyProbability: tileInterval.abbey
+};
