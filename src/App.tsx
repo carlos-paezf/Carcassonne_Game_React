@@ -1,34 +1,29 @@
 import './App.css';
-import { Header } from './UI/components/header/index';
-import { GameInfoContext, ToastContext } from './app/context';
-import { useState } from 'react';
-import { GameInfoType, ToastPropsType } from './app/types';
-import { GameInfo } from './UI/components/game-info/index';
-import { ToastContainer } from './UI/components/toast/index';
-import { initialGameInfo } from './app/constants';
+
+import { Board } from './app/UI/components/board/Board';
+import { GameInfo } from './app/UI/components/game-info/index';
+import { Hand } from './app/UI/components/hand';
+import { Header } from './app/UI/components/header/index';
+import { ToastContainer } from './app/UI/components/toast/index';
+import { MultipleContextProvider } from './app/context/context-provider';
+import { GeneralProvider } from './app/reducer/general-provider';
 
 
 function App () {
-    const [ gameInfo, setGameInfo ] = useState<GameInfoType>( initialGameInfo );
-
-    const [ toasts, setToasts ] = useState<ToastPropsType[]>( [] );
-
-    const addToast = ( { message, type }: ToastPropsType ) => {
-        setToasts( [ ...toasts, { message, type } ] );
-    };
-
     return (
-        <GameInfoContext.Provider value={ { gameInfo, setGameInfo } }>
-            <div className="App">
-                <Header />
+        <MultipleContextProvider>
+            <GeneralProvider>
+                <div className="App">
+                    <Header />
+                    <GameInfo />
 
-                <GameInfo />
+                    <Hand />
+                    <Board />
 
-                <ToastContext.Provider value={ { toasts, addToast } }>
                     <ToastContainer />
-                </ToastContext.Provider>
-            </div>
-        </GameInfoContext.Provider>
+                </div>
+            </GeneralProvider>
+        </MultipleContextProvider>
     );
 }
 
