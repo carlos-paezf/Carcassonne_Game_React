@@ -1,5 +1,5 @@
-import { FC, useContext } from "react";
-import { GameInfoContext } from '../../../context/index';
+import { FC } from "react";
+import { useGameInfo } from "../../../reducer/game-reducer";
 
 
 /**
@@ -7,7 +7,7 @@ import { GameInfoContext } from '../../../context/index';
  * @returns A table with the game info.
  */
 export const GameInfo: FC = () => {
-    const { gameInfo } = useContext( GameInfoContext );
+    const gameInfo = useGameInfo();
 
     return (
         <table className="game-info">
