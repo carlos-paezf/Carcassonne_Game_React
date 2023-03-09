@@ -1,17 +1,21 @@
-import { FormEvent, useContext } from 'react';
-import { GameInfoContext, ToastContext } from '../../../context';
+import { FormEvent } from 'react';
+import { ToastType } from '../../../constants';
 import { useForm } from '../../../hooks/useForm';
-import { ISettingsGameType, ToastType } from '../../../types';
+import { useGameInfoDispatch } from '../../../reducer/game-reducer';
+import { useToastDispatch } from '../../../reducer/toast-reducer';
+import { ISettingsGameType } from '../../../types';
 
 
 export const Header = () => {
-    const { gameInfo, setGameInfo } = useContext( GameInfoContext );
-    const { addToast } = useContext( ToastContext );
+    const dispatchGameInfo = useGameInfoDispatch();
+    const dispatchToast = useToastDispatch();
+
 
     const { handleChange, playerName, boardSize } = useForm<ISettingsGameType>( {
         playerName: 'Player',
         boardSize: 11
     } );
+
 
     /**
      * "The function handleStartGame is a function that takes an event of type FormEvent and returns
@@ -26,25 +30,36 @@ export const Header = () => {
     const handleStartGame = ( e: FormEvent<HTMLFormElement> ) => {
         e.preventDefault();
 
-        if ( !boardSize || boardSize < 3 ) return addToast( {
-            message: 'Board size is required and must be greater than or equal to 3',
-            type: ToastType.ERROR
+        if ( !boardSize || boardSize < 3 ) return dispatchToast( {
+            type: 'addToast',
+            payload: {
+                message: 'Board size is required and must be greater than or equal to 3',
+                type: ToastType.ERROR
+            }
         } );
 
-        if ( boardSize % 2 === 0 ) return addToast( {
-            message: 'The size of the board to be odd',
-            type: ToastType.ERROR
+        if ( boardSize % 2 === 0 ) return dispatchToast( {
+            type: 'addToast',
+            payload: {
+                message: 'The size of the board to be odd',
+                type: ToastType.ERROR
+            }
         } );
 
-        setGameInfo( {
-            ...gameInfo,
-            tilesInDeck: boardSize ** 2,
-            settingsGame: { playerName, boardSize }
+        dispatchGameInfo( {
+            type: 'playGame',
+            payload: {
+                tilesInDeck: boardSize ** 2,
+                settingsGame: { playerName, boardSize }
+            }
         } );
 
-        addToast( {
-            message: `${ playerName }, you have started a new game`,
-            type: ToastType.SUCCESS
+        dispatchToast( {
+            type: 'addToast',
+            payload: {
+                message: `${ playerName }!!!, you have started a new game`,
+                type: ToastType.SUCCESS
+            }
         } );
     };
 
