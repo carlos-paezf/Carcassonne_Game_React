@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import { ToastType } from "../constants";
+import { Tile } from "../game-logic/tile";
 
 export interface IGameInfo {
     tilesInDeck: number;
@@ -41,4 +42,10 @@ export interface IReducerAction<T> {
 
 export interface IActionHandlers<T> {
     [ key: string ]: ( object: T, payload: Partial<T> ) => T;
+}
+
+
+export interface IHand {
+    id: number,
+    tile: Tile;
 }
