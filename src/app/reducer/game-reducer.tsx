@@ -35,7 +35,8 @@ const actionHandlers: IActionHandlers<IGameInfo> = {
     playGame: ( gameInfo, payload ) => ( {
         ...gameInfo,
         tilesInDeck: payload.tilesInDeck!,
-        settingsGame: payload.settingsGame!
+        settingsGame: payload.settingsGame!,
+        numberDiscards: payload.numberDiscards!
     } ),
     updateTilesInDeck: ( gameInfo, payload ) => ( {
         ...gameInfo,
