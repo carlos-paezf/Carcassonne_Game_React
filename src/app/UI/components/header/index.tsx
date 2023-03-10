@@ -49,8 +49,9 @@ export const Header = () => {
         dispatchGameInfo( {
             type: 'playGame',
             payload: {
-                tilesInDeck: boardSize ** 2,
-                settingsGame: { playerName, boardSize }
+                numberDiscards: 5,
+                tilesInDeck: boardSize ** 2 - 4,
+                settingsGame: { playerName, boardSize },
             }
         } );
 
