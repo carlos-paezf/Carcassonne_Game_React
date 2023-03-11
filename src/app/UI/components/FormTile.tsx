@@ -28,14 +28,16 @@ export const FormTile: FC<Props> = ( { tile } ) => {
     return (
         <div className="form-tile">
             <form className="place-tile" onSubmit={ handlePlayTile }>
+                <h3>Tile selected: { tile.toString }</h3>
+
                 <div className="form-group">
                     <div className="form-control">
-                        <label htmlFor="posX">Input the X coord</label>
+                        <label htmlFor="posX">Input the X coord:</label>
                         <input type="number" name="posX" id="posX" value={ posX } onChange={ handleChange } min="0" max={ boardSize - 1 } />
                     </div>
 
                     <div className="form-control">
-                        <label htmlFor="posY">Input the Y coord</label>
+                        <label htmlFor="posY">Input the Y coord:</label>
                         <input type="number" name="posY" id="posY" value={ posY } onChange={ handleChange } min="0" max={ boardSize - 1 } />
                     </div>
                 </div>
