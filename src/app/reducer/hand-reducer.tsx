@@ -64,7 +64,7 @@ const actionHandlers: IActionHandlers = {
         return [ ...hand, { idx: maxIdx + 1, tile: Tile.generateTile() } ];
     },
 
-    discardHand: ( hand, _ ) => {
+    discardHand: ( hand ) => {
         hand = [];
         for ( let i = 0; i < TILES_PER_HAND; i++ ) {
             hand.push( { idx: i, tile: Tile.generateTile() } );
