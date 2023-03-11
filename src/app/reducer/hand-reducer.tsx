@@ -45,7 +45,7 @@ interface IActionHandlers {
 
 
 const actionHandlers: IActionHandlers = {
-    initialHand: ( _, payload ) => {
+    initialHand: () => {
         const hand: ITile[] = [];
         for ( let i = 0; i < TILES_PER_HAND; i++ ) {
             hand.push( { idx: i, tile: Tile.generateTile() } );
@@ -54,22 +54,17 @@ const actionHandlers: IActionHandlers = {
     },
 
     playTile: ( hand, payload ) => {
-        return hand.filter( tile => tile.idx !== payload.indexTile );
-    },
+        hand.filter( tile => tile.idx !== payload.indexTile );
 
-    appendTileToHand: ( hand, payload ) => {
-        if ( payload.tilesInDeck === 0 ) throw new Error( 'There are no more cards to play' );
+        if ( payload.tilesInDeck === 0 ) return hand;
 
         let maxIdx = 0;
-
-        hand.forEach( tile => {
-            maxIdx = ( tile.idx > maxIdx ) ? tile.idx : maxIdx;
-        } );
+        hand.forEach( tile => { maxIdx = ( tile.idx > maxIdx ) ? tile.idx : maxIdx; } );
 
         return [ ...hand, { idx: maxIdx + 1, tile: Tile.generateTile() } ];
     },
 
-    discardHand: ( hand, payload ) => {
+    discardHand: ( hand, _ ) => {
         hand = [];
         for ( let i = 0; i < TILES_PER_HAND; i++ ) {
             hand.push( { idx: i, tile: Tile.generateTile() } );

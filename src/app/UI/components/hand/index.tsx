@@ -20,10 +20,7 @@ export const Hand: FC = () => {
     useEffect( () => {
         dispatchHand( {
             type: 'initialHand',
-            payload: {
-                numberDiscards,
-                tilesInDeck
-            }
+            payload: {}
         } );
     }, [] );
 
