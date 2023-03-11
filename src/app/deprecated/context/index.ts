@@ -1,7 +1,7 @@
 import { createContext } from "react";
-import { IGameInfo, IToastProps } from "../types";
-import { initialGameInfo } from "../constants";
-import { Tile } from "../game-logic/tile";
+import { IGameInfo, IToastProps } from "../../types";
+import { initialGameInfo } from "../../constants";
+import { Tile } from "../../game-logic/tile";
 
 
 type ToastContextType = {

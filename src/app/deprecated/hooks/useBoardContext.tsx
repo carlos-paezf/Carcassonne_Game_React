@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { Tile } from "../game-logic/tile";
-import { RoadDirection, TileType } from "../constants";
+import { Tile } from "../../game-logic/tile";
+import { RoadDirection, TileType } from "../../constants";
 
 
 export const useBoardContext = () => {

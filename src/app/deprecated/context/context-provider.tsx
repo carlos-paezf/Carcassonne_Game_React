@@ -1,6 +1,6 @@
 import { FC, ReactNode } from "react";
 import { BoardContext, GameInfoContext, HandContext, ToastContext } from ".";
-import { useMultipleContext } from "../hooks/useMultipleContext";
+import { useMultipleContext } from "../deprecated/useMultipleContext";
 
 
 type Props = {

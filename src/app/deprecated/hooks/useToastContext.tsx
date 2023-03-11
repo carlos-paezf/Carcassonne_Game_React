@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { IToastProps } from "../types";
+import { IToastProps } from "../../types";
 
 
 export const useToastContext = () => {
