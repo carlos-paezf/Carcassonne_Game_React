@@ -1,11 +1,11 @@
 import { FC, createContext, useContext, useReducer } from "react";
 import { TILES_PER_HAND } from "../constants";
 import { Tile } from "../game-logic/tile";
-import { IHand, IReducerAction, Props } from "../types";
+import { ITile, IReducerAction, Props } from "../types";
 import { useToastDispatch } from "./toast-reducer";
 
 
-const HandContext = createContext<IHand[]>( [] );
+const HandContext = createContext<ITile[]>( [] );
 const HandDispatchContext = createContext<any>( null );
 
 
@@ -40,21 +40,21 @@ interface IHandPayload {
 
 
 interface IActionHandlers {
-    [ key: string ]: ( object: IHand[], payload: IHandPayload ) => IHand[];
+    [ key: string ]: ( object: ITile[], payload: IHandPayload ) => ITile[];
 }
 
 
 const actionHandlers: IActionHandlers = {
     initialHand: ( _, payload ) => {
-        const hand: IHand[] = [];
+        const hand: ITile[] = [];
         for ( let i = 0; i < TILES_PER_HAND; i++ ) {
-            hand.push( { id: i, tile: Tile.generateTile() } );
+            hand.push( { idx: i, tile: Tile.generateTile() } );
         }
         return hand;
     },
 
     playTile: ( hand, payload ) => {
-        return hand.filter( tile => tile.id !== payload.indexTile );
+        return hand.filter( tile => tile.idx !== payload.indexTile );
     },
 
     appendTileToHand: ( hand, payload ) => {
@@ -63,16 +63,16 @@ const actionHandlers: IActionHandlers = {
         let maxIdx = 0;
 
         hand.forEach( tile => {
-            maxIdx = ( tile.id > maxIdx ) ? tile.id : maxIdx;
+            maxIdx = ( tile.idx > maxIdx ) ? tile.idx : maxIdx;
         } );
 
-        return [ ...hand, { id: maxIdx + 1, tile: Tile.generateTile() } ];
+        return [ ...hand, { idx: maxIdx + 1, tile: Tile.generateTile() } ];
     },
 
     discardHand: ( hand, payload ) => {
         hand = [];
         for ( let i = 0; i < TILES_PER_HAND; i++ ) {
-            hand.push( { id: i, tile: Tile.generateTile() } );
+            hand.push( { idx: i, tile: Tile.generateTile() } );
         }
         return hand;
     }
@@ -84,11 +84,11 @@ const actionHandlers: IActionHandlers = {
  * result of calling the handler function with the hand and payload arguments."
  * 
  * The actionHandlers object is defined as follows:
- * @param {IHand[]} hand - IHand[]
+ * @param {ITile[]} hand - IHand[]
  * @param action - IReducerAction<IHandPayload>
  * @returns The return value of the handler function.
  */
-function handReducer ( hand: IHand[], action: IReducerAction<IHandPayload> ) {
+function handReducer ( hand: ITile[], action: IReducerAction<IHandPayload> ) {
     const handler = actionHandlers[ action.type ];
 
     if ( !handler ) {

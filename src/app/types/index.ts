@@ -45,7 +45,7 @@ export interface IActionHandlers<T> {
 }
 
 
-export interface IHand {
-    id: number,
+export interface ITile {
+    idx: number,
     tile: Tile;
 }

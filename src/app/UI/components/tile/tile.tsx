@@ -1,15 +1,9 @@
 import { FC } from "react";
-import { Tile } from "../../../game-logic/tile";
+import { ITile } from "../../../types";
 
 
-type TileProps = {
-    tile: Tile;
-    index: number;
-};
-
-
-export const TileComponent: FC<TileProps> = ( { tile, index } ) => {
+export const TileComponent: FC<ITile> = ( { idx, tile } ) => {
     return (
-        <button className="tile btn" id={ `${ index }` }>{ tile.toString }</button>
+        <button className="tile btn" id={ `${ idx }` }>{ tile.toString }</button>
     );
 };

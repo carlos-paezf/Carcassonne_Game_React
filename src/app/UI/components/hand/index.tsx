@@ -80,7 +80,7 @@ export const Hand: FC = () => {
         <div className="hand">
             <div className="tiles">
                 {
-                    hand.map( tile => <TileComponent key={ tile.id } tile={ tile.tile } index={ tile.id } /> )
+                    hand.map( tile => <TileComponent key={ tile.idx } tile={ tile.tile } idx={ tile.idx } /> )
                 }
             </div>
             <button onClick={ handleDiscardHand }>Discard Hand</button>
