@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Tile } from "../../../game-logic/tile";
+import { Tile } from "../../game-logic/tile";
 
 
 type ColumnProps = {

@@ -1,7 +1,7 @@
 import { FC, useEffect } from "react";
-import { useDiscardHand } from "../../../hooks/useDiscardHand";
-import { useHand, useHandDispatch } from "../../../reducer/hand-reducer";
-import { TileComponent } from "../tile/tile";
+import { useDiscardHand } from "../../hooks/useDiscardHand";
+import { useHand, useHandDispatch } from "../../reducer/hand-reducer";
+import { TileComponent } from "./Tile";
 
 
 export const Hand: FC = () => {

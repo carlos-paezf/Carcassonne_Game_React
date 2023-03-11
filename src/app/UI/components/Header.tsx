@@ -1,7 +1,7 @@
 import { FormEvent } from 'react';
-import { useForm } from '../../../hooks/useForm';
-import { useStartGame } from '../../../hooks/useStartGame';
-import { ISettingsGameType } from '../../../types';
+import { useForm } from '../../hooks/useForm';
+import { useStartGame } from '../../hooks/useStartGame';
+import { ISettingsGameType } from '../../types';
 
 
 export const Header = () => {

@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { useGameInfo } from "../../../reducer/game-reducer";
+import { useGameInfo } from "../../reducer/game-reducer";
 
 
 /**

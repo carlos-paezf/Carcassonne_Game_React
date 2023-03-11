@@ -1,7 +1,7 @@
 import { FC, useEffect, useRef, useState } from 'react';
-import { ToastType } from '../../../constants';
-import { useToast } from '../../../reducer/toast-reducer';
-import { IToastProps } from '../../../types';
+import { ToastType } from '../../constants';
+import { useToast } from '../../reducer/toast-reducer';
+import { IToastProps } from '../../types';
 
 
 /**

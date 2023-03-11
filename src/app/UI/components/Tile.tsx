@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { ITile } from "../../../types";
+import { ITile } from "../../types";
 
 
 export const TileComponent: FC<ITile> = ( { idx, tile } ) => {

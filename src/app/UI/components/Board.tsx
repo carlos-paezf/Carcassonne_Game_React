@@ -1,6 +1,6 @@
 import { FC, useEffect } from 'react';
-import { useBoard, useBoardDispatch } from '../../../reducer/board-reducer';
-import { useGameInfo } from '../../../reducer/game-reducer';
+import { useBoard, useBoardDispatch } from '../../reducer/board-reducer';
+import { useGameInfo } from '../../reducer/game-reducer';
 import { Column } from './Column';
 
 
