@@ -1,8 +1,8 @@
 import { FC, FormEvent, useContext } from "react";
+import { BoardContext, GameInfoContext } from "../../../deprecated/context";
+import { Tile } from "../../../game-logic/tile";
 import { useForm } from "../../../hooks/useForm";
 import { ICoordTile } from "../../../types";
-import { BoardContext, GameInfoContext } from "../../../context";
-import { Tile } from "../../../game-logic/tile";
 
 
 type Props = {
