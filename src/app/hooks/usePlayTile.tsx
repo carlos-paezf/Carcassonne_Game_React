@@ -56,7 +56,7 @@ export const usePlayTile = () => {
         gameInfoDispatch( {
             type: 'playTile',
             payload: {
-                tilesInDeck: tilesInDeck - 1,
+                tilesInDeck: ( tilesInDeck === 0 ) ? 0 : tilesInDeck - 1,
                 turn: turn + 1,
                 score: score + increaseScore
             }
