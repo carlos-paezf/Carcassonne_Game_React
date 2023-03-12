@@ -22,13 +22,17 @@ export const useTileAndNeighborhood = () => {
      * 
      * @param {number} row - number - the row of the cell
      * @param {number} col - number - the column of the cell
+     * @param {boolean} [includeDiagonal=false] - boolean = false
      * @returns An array of objects
      */
-    const getNeighborhood = ( row: number, col: number ) => {
-        return VonNeumannNeighborhoods.getNeighborhood( {
-            row: Number( row ), column: Number( col ),
-            maxRows: Number( boardSize ), maxColumns: Number( boardSize )
-        } );
+    const getNeighborhood = ( row: number, col: number, includeDiagonal: boolean = false ) => {
+        return VonNeumannNeighborhoods.getNeighborhood(
+            {
+                row: Number( row ), column: Number( col ),
+                maxRows: Number( boardSize ), maxColumns: Number( boardSize ),
+            },
+            includeDiagonal
+        );
     };
 
     return { getTile, getNeighborhood };

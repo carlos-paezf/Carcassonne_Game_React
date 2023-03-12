@@ -46,6 +46,8 @@ export class VonNeumannNeighborhoods {
      * @param {getNeighborhoodParams} params An object that contains the row and
      * column numbers of the center cell and the maximum number of rows and columns
      * in the grid.
+     * @param {boolean} [includeDiagonal=false] - boolean = false. Include the diagonal
+     * neighborhood.
      *
      * @returns {number[][]} An array containing the row and column numbers of the
      * cells that are adjacent and diagonal to the specified cell.
