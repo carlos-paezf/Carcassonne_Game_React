@@ -264,6 +264,16 @@ input {
     width: 250px;
 }
 
+.place-tile {
+    position: relative;
+}
+
+#close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 25px;
+}
 
 /* ------------------------------------------------------------------- */
 
