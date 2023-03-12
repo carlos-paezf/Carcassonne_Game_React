@@ -1,13 +1,18 @@
-import { createContext } from "react";
+import { Dispatch, SetStateAction, createContext } from "react";
+import { ITile } from "../types";
 
 
 type FormTileType = {
-    isClosed: boolean;
-    updateVisibility: () => void;
+    isVisible: boolean;
+    setIsVisible: Dispatch<SetStateAction<boolean>>;
+    selectedTile?: ITile,
+    setSelectedTile: Dispatch<SetStateAction<ITile | undefined>>;
 };
 
 
 export const FormTileContext = createContext<FormTileType>( {
-    isClosed: true,
-    updateVisibility: () => { }
+    isVisible: false,
+    setIsVisible: () => { },
+    selectedTile: undefined,
+    setSelectedTile: () => { }
 } );
