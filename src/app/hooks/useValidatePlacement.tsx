@@ -1,9 +1,9 @@
 import { TileType, ToastType } from "../constants";
 import { Tile } from "../game-logic/tile";
-import { VonNeumannNeighborhoods } from "../game-logic/von-neumann-neighborhoods";
 import { useBoard } from "../reducer/board-reducer";
 import { useGameInfo } from "../reducer/game-reducer";
 import { useToastDispatch } from "../reducer/toast-reducer";
+import { useTileAndNeighborhood } from "./useTileAndNeighborhood";
 
 
 /**
@@ -17,17 +17,7 @@ export const useValidatePlacement = () => {
     const board = useBoard();
     const { settingsGame: { boardSize } } = useGameInfo();
     const dispatchToast = useToastDispatch();
-
-
-    /**
-     * GetTile() returns the tile at the specified row and column.
-     * @param {number} row - The row of the tile you want to get.
-     * @param {number} col - number - The column of the tile you want to get.
-     * @returns The tile at the given row and column.
-     */
-    const getTile = ( row: number, col: number ) => {
-        return board[ row ][ col ];
-    };
+    const { getTile, getNeighborhood } = useTileAndNeighborhood();
 
 
     /**
@@ -52,10 +42,7 @@ export const useValidatePlacement = () => {
         }
 
 
-        const neighborsTiles = VonNeumannNeighborhoods.getNeighborhood( {
-            row: Number( row ), column: Number( col ),
-            maxRows: Number( boardSize ), maxColumns: Number( boardSize )
-        } );
+        const neighborsTiles = getNeighborhood( row, col );
 
 
         if ( neighborsTiles.every( ( nt ) => getTile( nt[ 0 ], nt[ 1 ] ) === null ) ) {
@@ -82,6 +69,7 @@ export const useValidatePlacement = () => {
             } );
             return false;
         }
+
 
         return true;
     };
