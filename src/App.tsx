@@ -9,11 +9,13 @@ import { Header } from './app/UI/components/Header';
 import { ToastContainer } from './app/UI/components/Toasts';
 import { FormTileContext } from './app/context/form-tile-context';
 import { ITile } from './app/types';
+import { useGameInfo } from './app/reducer/game-reducer';
 
 
 function App () {
     const [ isVisible, setIsVisible ] = useState( false );
     const [ selectedTile, setSelectedTile ] = useState<ITile>();
+    const { tilesInDeck, turn } = useGameInfo();
 
     return (
         <FormTileContext.Provider value={ { isVisible, setIsVisible, selectedTile, setSelectedTile } }>
@@ -21,8 +23,12 @@ function App () {
                 <Header />
                 <GameInfo />
 
-                <Hand />
-                <Board />
+                {
+                    !( tilesInDeck === 0 && turn === 0 ) && <>
+                        <Hand />
+                        <Board />
+                    </>
+                }
 
                 <FormTile />
                 <ToastContainer />
