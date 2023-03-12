@@ -3,13 +3,14 @@ import { useDiscardHand } from "../../hooks/useDiscardHand";
 import { useHand, useHandDispatch } from "../../reducer/hand-reducer";
 import { TileComponent } from "./Tile";
 import { useGameInfo } from "../../reducer/game-reducer";
+import { TILES_PER_HAND } from "../../constants";
 
 
 export const Hand: FC = () => {
     const hand = useHand();
     const dispatchHand = useHandDispatch();
     const { discardHand } = useDiscardHand();
-    const { turn, lastTurnDiscarded, settingsGame: { boardSize } } = useGameInfo();
+    const { turn, lastTurnDiscarded, tilesInDeck, settingsGame: { boardSize } } = useGameInfo();
 
 
     const handleDiscardHand = () => {
@@ -33,7 +34,8 @@ export const Hand: FC = () => {
                 }
             </div>
             {
-                ( ( turn - lastTurnDiscarded ) >= 5 ) && <button className="btn-danger" onClick={ handleDiscardHand }>Discard Hand</button>
+                ( ( turn - lastTurnDiscarded ) >= 5 && ( tilesInDeck >= TILES_PER_HAND ) )
+                && <button className="btn-danger" onClick={ handleDiscardHand }>Discard Hand</button>
             }
         </div>
     );
