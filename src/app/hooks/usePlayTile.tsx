@@ -1,7 +1,8 @@
 import { Tile } from "../game-logic/tile";
-import { useBoard, useBoardDispatch } from "../reducer/board-reducer";
+import { useBoardDispatch } from "../reducer/board-reducer";
 import { useGameInfo, useGameInfoDispatch } from "../reducer/game-reducer";
 import { useHandDispatch } from "../reducer/hand-reducer";
+import { useIncreasePoints } from "./useIncreasePoints";
 import { useValidatePlacement } from "./useValidatePlacement";
 
 
@@ -13,11 +14,12 @@ import { useValidatePlacement } from "./useValidatePlacement";
  * @returns The playTile function is being returned.
  */
 export const usePlayTile = () => {
-    const { tilesInDeck, turn } = useGameInfo();
+    const { tilesInDeck, turn, score } = useGameInfo();
     const dispatchBoard = useBoardDispatch();
     const dispatchHand = useHandDispatch();
     const gameInfoDispatch = useGameInfoDispatch();
     const { validatePlacement } = useValidatePlacement();
+    const { updateScore } = useIncreasePoints();
 
     /**
      * PlayTile is a function that takes in an indexTile, a tile, a row, and a col, and then dispatches
@@ -46,14 +48,16 @@ export const usePlayTile = () => {
             }
         } );
 
+        const increaseScore = updateScore( tile.type, row, col );
+
         gameInfoDispatch( {
             type: 'playTile',
             payload: {
                 tilesInDeck: tilesInDeck - 1,
-                turn: turn + 1
+                turn: turn + 1,
+                score: score + increaseScore
             }
         } );
-        // TODO: Actualizar puntuación
     };
 
     return { playTile };

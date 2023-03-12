@@ -48,7 +48,8 @@ const actionHandlers: IActionHandlers<IGameInfo> = {
     playTile: ( gameInfo, payload ) => ( {
         ...gameInfo,
         tilesInDeck: payload.tilesInDeck!,
-        turn: payload.turn!
+        turn: payload.turn!,
+        score: payload.score!
     } )
 };
 
