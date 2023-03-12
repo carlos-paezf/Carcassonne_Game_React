@@ -1,4 +1,5 @@
 import { ToastType } from "../constants";
+import { useBoardDispatch } from "../reducer/board-reducer";
 import { useGameInfoDispatch } from "../reducer/game-reducer";
 import { useToastDispatch } from '../reducer/toast-reducer';
 
@@ -10,7 +11,19 @@ import { useToastDispatch } from '../reducer/toast-reducer';
 export const useStartGame = () => {
     const dispatchGameInfo = useGameInfoDispatch();
     const dispatchToast = useToastDispatch();
+    const dispatchBoard = useBoardDispatch();
 
+    /**
+     * "If the board size is not a number or is less than 3, dispatch a toast with an error message,
+     * otherwise if the board size is even, dispatch a toast with an error message, otherwise dispatch
+     * a game info action with a payload of the tiles in the deck, the player name, and the board size,
+     * then dispatch a board action with a payload of the board size, then dispatch a toast with a
+     * success message."
+     * 
+     * @param {number} boardSize - number - the size of the board
+     * @param {string} playerName - string - the name of the player
+     * @returns the dispatch function.
+     */
     const startGame = ( boardSize: number, playerName: string ) => {
         if ( !boardSize || boardSize < 3 ) return dispatchToast( {
             type: 'addToast',
@@ -29,11 +42,17 @@ export const useStartGame = () => {
         } );
 
         dispatchGameInfo( {
-            type: 'playGame',
+            type: 'startGame',
             payload: {
-                numberDiscards: 5,
                 tilesInDeck: boardSize ** 2 - 4,
                 settingsGame: { playerName, boardSize },
+            }
+        } );
+
+        dispatchBoard( {
+            type: 'createBoard',
+            payload: {
+                size: boardSize
             }
         } );
 
