@@ -54,14 +54,14 @@ const actionHandlers: IActionHandlers = {
     },
 
     playTile: ( hand, payload ) => {
-        hand.filter( tile => tile.idx !== payload.indexTile );
+        const newHand: ITile[] = hand.filter( tile => tile.idx !== payload.indexTile );
 
-        if ( payload.tilesInDeck === 0 ) return hand;
+        if ( payload.tilesInDeck! <= 0 ) return newHand;
 
         let maxIdx = 0;
-        hand.forEach( tile => { maxIdx = ( tile.idx > maxIdx ) ? tile.idx : maxIdx; } );
+        newHand.forEach( tile => { maxIdx = ( tile.idx > maxIdx ) ? tile.idx : maxIdx; } );
 
-        return [ ...hand, { idx: maxIdx + 1, tile: Tile.generateTile() } ];
+        return [ ...newHand, { idx: maxIdx + 1, tile: Tile.generateTile() } ];
     },
 
     discardHand: ( hand ) => {
