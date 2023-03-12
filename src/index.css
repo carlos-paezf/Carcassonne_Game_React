@@ -162,7 +162,7 @@ input {
 
 .board-game td {
     text-align: center;
-    height: 45px;
+    height: 75px;
 }
 
 .empty {
@@ -176,9 +176,51 @@ input {
 
 .column {
     width: 100px;
-    border: 1px dotted purple;
+    border: 1px dashed purple;
     font-size: 12px;
 }
+
+.fill {
+    border: 1px dotted rgb(255, 0, 72);
+    position: relative;
+}
+
+/* .fill.ABBEY {
+    background-image: url("https://images.unsplash.com/photo-1506345932350-caeeec3d8895?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1972&q=80");
+    background-position: center;
+    background-size: cover;
+    filter: brightness(0.5) contrast(1.2) saturate(1.2) opacity(0.9);
+    color: white;
+}
+
+.fill.CITY {
+    background-image: url("https://images.unsplash.com/photo-1538792251741-1a74d2bb601e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=722&q=80");
+    background-position: center;
+    background-size: cover;
+    filter: brightness(0.5) contrast(1.2) saturate(1.2) opacity(0.9);
+    color: white;
+}
+
+.fill.ROAD {
+    background-image: url("https://images.unsplash.com/photo-1543997385-22fe0f397eeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=659&q=80");
+    background-position: center;
+    background-size: cover;
+    filter: brightness(0.5) contrast(1.5) saturate(1.5) opacity(0.9);
+    color: rgb(255, 255, 255);
+} */
+
+/* .fill.ABBEY::before,
+.fill.CITY::before,
+.fill.ROAD::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    filter: brightness(50%);
+} */
 
 .tile {
     cursor: pointer;

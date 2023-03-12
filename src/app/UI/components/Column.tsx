@@ -17,7 +17,7 @@ type ColumnProps = {
  */
 export const Column: FC<ColumnProps> = ( { tile, row, col } ) => {
     return (
-        <td className={ `column ${ tile ? 'fill' : 'empty' }` }>
+        <td className={ `column ${ tile ? `fill ${ tile.type }` : 'empty' }` }>
             { tile ? tile.toString : `(${ row },${ col })` }
         </td>
     );
