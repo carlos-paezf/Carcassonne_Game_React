@@ -1,10 +1,8 @@
 import { IncrementType, TilePoint, TileType } from "../constants";
-import { useBoard } from "../reducer/board-reducer";
 import { useTileAndNeighborhood } from "./useTileAndNeighborhood";
 
 
 export const useIncreasePoints = () => {
-    const board = useBoard();
     const { getTile, getNeighborhood } = useTileAndNeighborhood();
 
     const increasePoints = ( incrementType: keyof typeof IncrementType, row: number, col: number ): number => {
