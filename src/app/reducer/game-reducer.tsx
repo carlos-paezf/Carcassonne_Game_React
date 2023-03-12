@@ -37,7 +37,8 @@ const actionHandlers: IActionHandlers<IGameInfo> = {
         tilesInDeck: payload.tilesInDeck!,
         settingsGame: payload.settingsGame!,
         numberDiscards: 5,
-        turn: 0
+        turn: 0,
+        score: 0
     } ),
     discardHand: ( gameInfo, payload ) => ( {
         ...gameInfo,

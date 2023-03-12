@@ -6,7 +6,11 @@ export const useIncreasePoints = () => {
     const { getTile, getNeighborhood } = useTileAndNeighborhood();
 
     const increasePoints = ( incrementType: keyof typeof IncrementType, row: number, col: number ): number => {
-        const tilesNeighborhood = getNeighborhood( row, col, incrementType === IncrementType.ABBEY_NEIGHBORHOOD );
+        const tilesNeighborhood = getNeighborhood(
+            row, col,
+            incrementType === IncrementType.ABBEY_NEIGHBORHOOD ||
+            incrementType === IncrementType.BY_NEIGHBORING_ABBEY
+        );
 
         let score = 0;
 
