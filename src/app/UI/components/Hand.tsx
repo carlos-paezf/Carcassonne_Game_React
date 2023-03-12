@@ -9,20 +9,21 @@ export const Hand: FC = () => {
     const hand = useHand();
     const dispatchHand = useHandDispatch();
     const { discardHand } = useDiscardHand();
-    const { turn, lastTurnDiscarded } = useGameInfo();
+    const { turn, lastTurnDiscarded, settingsGame: { boardSize } } = useGameInfo();
 
 
     const handleDiscardHand = () => {
         return discardHand();
     };
 
+    const restartHand = () => {
+        if ( turn === 0 ) dispatchHand( { type: 'initialHand' } );
+    };
+
 
     useEffect( () => {
-        dispatchHand( {
-            type: 'initialHand',
-            payload: {}
-        } );
-    }, [] );
+        restartHand();
+    }, [ turn, boardSize ] );
 
     return (
         <div className="hand">
