@@ -45,7 +45,7 @@ export const Header = () => {
                 </div>
             </div>
 
-            <button>Start Game</button>
+            <button className="btn-success">Start Game</button>
         </form>
     );
 };

@@ -131,7 +131,7 @@ input {
     width: 250px;
     text-align: center;
     letter-spacing: .5px;
-    font-size: 15px;
+    font-size: 18px;
 }
 
 /* ------------------------------------------------------------------- */
@@ -183,9 +183,11 @@ input {
 .fill {
     border: 1px dotted rgb(255, 0, 72);
     position: relative;
+    font-size: 14px;
 }
 
-/* .fill.ABBEY {
+/* 
+.fill.ABBEY {
     background-image: url("https://images.unsplash.com/photo-1506345932350-caeeec3d8895?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1972&q=80");
     background-position: center;
     background-size: cover;
@@ -207,9 +209,9 @@ input {
     background-size: cover;
     filter: brightness(0.5) contrast(1.5) saturate(1.5) opacity(0.9);
     color: rgb(255, 255, 255);
-} */
+} 
 
-/* .fill.ABBEY::before,
+.fill.ABBEY::before,
 .fill.CITY::before,
 .fill.ROAD::before {
     content: "";
@@ -220,7 +222,8 @@ input {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     filter: brightness(50%);
-} */
+} 
+*/
 
 .tile {
     cursor: pointer;
@@ -259,14 +262,14 @@ input {
 
 .form-tile {
     display: grid;
-    background: rgba(255, 255, 255, .2);
-    height: 100%;
+    background: rgba(0, 0, 0, .2);
+    height: 100vh;
     width: 100%;
     z-index: 10;
     position: absolute;
     place-items: center;
     place-content: center;
-    top: 0;
+    top: -10px;
     left: 0;
 }
 
@@ -316,6 +319,18 @@ input {
     top: 10px;
     right: 10px;
     font-size: 25px;
+    cursor: pointer;
+    color: rgb(160, 0, 0);
+}
+
+/* ------------------------------------------------------------------- */
+
+.btn-success {
+    background: rgb(0, 83, 0);
+}
+
+.btn-danger {
+    background: rgb(150, 0, 0);
 }
 
 /* ------------------------------------------------------------------- */

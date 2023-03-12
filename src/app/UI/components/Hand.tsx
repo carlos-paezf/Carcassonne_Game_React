@@ -29,7 +29,7 @@ export const Hand: FC = () => {
                     hand.map( tile => <TileComponent key={ tile.idx } tile={ tile.tile } idx={ tile.idx } /> )
                 }
             </div>
-            <button onClick={ handleDiscardHand }>Discard Hand</button>
+            <button className="btn-danger" onClick={ handleDiscardHand }>Discard Hand</button>
         </div>
     );
 };
