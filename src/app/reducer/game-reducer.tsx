@@ -32,11 +32,12 @@ export const GameProvider: FC<Props> = ( { children } ) => {
 
 /* An object with keys that are strings and values that are functions. */
 const actionHandlers: IActionHandlers<IGameInfo> = {
-    playGame: ( gameInfo, payload ) => ( {
+    startGame: ( gameInfo, payload ) => ( {
         ...gameInfo,
         tilesInDeck: payload.tilesInDeck!,
         settingsGame: payload.settingsGame!,
-        numberDiscards: payload.numberDiscards!
+        numberDiscards: 5,
+        turn: 0
     } ),
     discardHand: ( gameInfo, payload ) => ( {
         ...gameInfo,
@@ -44,21 +45,10 @@ const actionHandlers: IActionHandlers<IGameInfo> = {
         turn: payload.turn!,
         numberDiscards: payload.numberDiscards!
     } ),
-    updateTilesInDeck: ( gameInfo, payload ) => ( {
+    playTile: ( gameInfo, payload ) => ( {
         ...gameInfo,
-        tilesInDeck: payload.tilesInDeck!
-    } ),
-    updateTurn: ( gameInfo, payload ) => ( {
-        ...gameInfo,
+        tilesInDeck: payload.tilesInDeck!,
         turn: payload.turn!
-    } ),
-    updateNumberOfDiscards: ( gameInfo, payload ) => ( {
-        ...gameInfo,
-        numberDiscards: payload.numberDiscards!
-    } ),
-    updateScore: ( gameInfo, payload ) => ( {
-        ...gameInfo,
-        score: payload.score!
     } )
 };
 
