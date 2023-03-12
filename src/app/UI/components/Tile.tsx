@@ -1,9 +1,17 @@
-import { FC } from "react";
+import { FC, useContext } from "react";
 import { ITile } from "../../types";
+import { FormTileContext } from "../../context/form-tile-context";
 
 
-export const TileComponent: FC<ITile> = ( { idx, tile } ) => {
+export const TileComponent: FC<ITile> = ( tile ) => {
+    const { setSelectedTile, setIsVisible } = useContext( FormTileContext );
+
+    const handleOpenFormTile = () => {
+        setIsVisible( true );
+        setSelectedTile( tile );
+    };
+
     return (
-        <button className="tile btn" id={ `${ idx }` }>{ tile.toString }</button>
+        <button className="tile btn" id={ `${ tile.idx }` } onClick={ handleOpenFormTile }>{ tile.tile.toString }</button>
     );
 };
