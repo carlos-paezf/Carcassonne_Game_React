@@ -1,7 +1,9 @@
+import { ToastType } from "../constants";
 import { Tile } from "../game-logic/tile";
 import { useBoardDispatch } from "../reducer/board-reducer";
 import { useGameInfo, useGameInfoDispatch } from "../reducer/game-reducer";
 import { useHandDispatch } from "../reducer/hand-reducer";
+import { useToastDispatch } from "../reducer/toast-reducer";
 import { useIncreasePoints } from "./useIncreasePoints";
 import { useValidatePlacement } from "./useValidatePlacement";
 
@@ -17,6 +19,7 @@ export const usePlayTile = () => {
     const { tilesInDeck, turn, score } = useGameInfo();
     const dispatchBoard = useBoardDispatch();
     const dispatchHand = useHandDispatch();
+    const dispatchToast = useToastDispatch();
     const gameInfoDispatch = useGameInfoDispatch();
     const { validatePlacement } = useValidatePlacement();
     const { updateScore } = useIncreasePoints();
@@ -56,6 +59,13 @@ export const usePlayTile = () => {
                 tilesInDeck: tilesInDeck - 1,
                 turn: turn + 1,
                 score: score + increaseScore
+            }
+        } );
+
+        dispatchToast( {
+            type: 'addToast',
+            payload: {
+                message: `+${ increaseScore }`, type: ToastType.INFO, visibilityTime: 3000
             }
         } );
     };

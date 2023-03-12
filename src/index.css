@@ -184,6 +184,19 @@ input {
     border: 1px dotted rgb(255, 0, 72);
     position: relative;
     font-size: 14px;
+    color: white;
+}
+
+.fill.ABBEY {
+    background: rgb(12, 70, 1);
+}
+
+.fill.CITY {
+    background: rgb(0, 0, 68);
+}
+
+.fill.ROAD {
+    background: rgb(88, 32, 0);
 }
 
 /* 

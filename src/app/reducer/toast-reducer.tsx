@@ -37,7 +37,7 @@ export interface IActionHandlers {
 const actionHandlers: IActionHandlers = {
     addToast: ( toasts, payload ) => ( [
         ...toasts,
-        { message: payload!.message, type: payload!.type }
+        { message: payload!.message, type: payload!.type, visibilityTime: payload.visibilityTime }
     ] )
 };
 

@@ -1,7 +1,6 @@
 import { useReducer } from "react";
-import { useToastDispatch } from "../reducer/toast-reducer";
-import { ToastType } from "../constants";
-
+import { useToastDispatch } from "../../reducer/toast-reducer";
+import { ToastType } from "../../constants";
 
 /**
  * It's a custom hook that wraps the useReducer hook and adds error handling.

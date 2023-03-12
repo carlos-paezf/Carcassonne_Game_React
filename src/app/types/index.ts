@@ -21,6 +21,7 @@ export interface ISettingsGameType {
 export interface IToastProps {
     message: string;
     type?: ToastType;
+    visibilityTime?: number;
 };
 
 

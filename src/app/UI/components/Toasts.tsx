@@ -11,12 +11,12 @@ import { IToastProps } from '../../types';
  * type parameter. The type parameter is the type of the props that the component takes.
  * @returns A React component that displays a toast message.
  */
-const Toast: FC<IToastProps> = ( { message, type = ToastType.ERROR } ) => {
+const Toast: FC<IToastProps> = ( { message, type = ToastType.ERROR, visibilityTime = 5000 } ) => {
     const [ show, setShow ] = useState( true );
     const toastRef = useRef<HTMLSpanElement>( null );
 
     useEffect( () => {
-        const timeout = setTimeout( () => setShow( false ), 5000 );
+        const timeout = setTimeout( () => setShow( false ), visibilityTime );
 
         return () => clearInterval( timeout );
     }, [] );
@@ -41,7 +41,7 @@ export const ToastContainer: FC = () => {
         <div id="toasts-container">
             {
                 toasts.map( ( toast, index ) =>
-                    <Toast key={ index } message={ toast.message } type={ toast.type } />
+                    <Toast key={ index } message={ toast.message } type={ toast.type } visibilityTime={ toast.visibilityTime } />
                 )
             }
         </div>
