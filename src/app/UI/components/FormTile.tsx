@@ -1,34 +1,34 @@
-import { FC, FormEvent, useContext } from "react";
-import { BoardContext, GameInfoContext } from "../../deprecated/context";
-import { Tile } from "../../game-logic/tile";
+import { FC, FormEvent, useContext } from 'react';
+import { FormTileContext } from "../../context/form-tile-context";
 import { useForm } from "../../hooks/useForm";
+import { usePlayTile } from "../../hooks/usePlayTile";
+import { useGameInfo } from "../../reducer/game-reducer";
 import { ICoordTile } from "../../types";
 
 
-type Props = {
-    tile: Tile;
-};
-
-
-export const FormTile: FC<Props> = ( { tile } ) => {
-    const { gameInfo: { settingsGame: { boardSize } } } = useContext( GameInfoContext );
-    const { updateBoard } = useContext( BoardContext );
+export const FormTile: FC = () => {
+    const { isVisible, setIsVisible, selectedTile } = useContext( FormTileContext );
+    const { settingsGame: { boardSize } } = useGameInfo();
+    const { playTile } = usePlayTile();
 
     const { handleChange, posX, posY } = useForm<ICoordTile>( {
-        posX: 0,
-        posY: 0
+        posX: 0, posY: 0
     } );
 
     const handlePlayTile = ( e: FormEvent<HTMLFormElement> ) => {
         e.preventDefault();
-
-        updateBoard( tile, posX, posY );
+        playTile( selectedTile!.idx, selectedTile!.tile, posX, posY );
+        setIsVisible( false );
     };
+
+    if ( !isVisible || !selectedTile ) return <></>;
 
     return (
         <div className="form-tile">
-            <form className="place-tile" onSubmit={ handlePlayTile }>
-                <h3>Tile selected: { tile.toString }</h3>
+            <form className="place-tile" id="place-tile" onSubmit={ handlePlayTile }>
+                <i id="close" className="far fa-times-circle" onClick={ () => setIsVisible( false ) }></i>
+
+                <h3>Tile selected: { selectedTile.tile.toString }</h3>
 
                 <div className="form-group">
                     <div className="form-control">
