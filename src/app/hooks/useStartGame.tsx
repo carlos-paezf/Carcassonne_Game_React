@@ -1,4 +1,4 @@
-import { ToastType } from "../constants";
+import { TILES_PER_HAND, ToastType } from "../constants";
 import { useBoardDispatch } from "../reducer/board-reducer";
 import { useGameInfoDispatch } from "../reducer/game-reducer";
 import { useToastDispatch } from '../reducer/toast-reducer';
@@ -44,7 +44,7 @@ export const useStartGame = () => {
         dispatchGameInfo( {
             type: 'startGame',
             payload: {
-                tilesInDeck: boardSize ** 2 - 4,
+                tilesInDeck: boardSize ** 2 - ( TILES_PER_HAND ) - 1,
                 settingsGame: { playerName, boardSize },
             }
         } );

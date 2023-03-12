@@ -5,6 +5,7 @@ import { Tile } from "../game-logic/tile";
 export interface IGameInfo {
     tilesInDeck: number;
     turn: number;
+    lastTurnDiscarded: number;
     numberDiscards: number;
     score: number;
     settingsGame: ISettingsGameType;

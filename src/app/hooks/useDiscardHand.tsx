@@ -11,15 +11,15 @@ import { useToastDispatch } from "../reducer/toast-reducer";
 export const useDiscardHand = () => {
     const dispatchHand = useHandDispatch();
     const dispatchToast = useToastDispatch();
-    const { numberDiscards, tilesInDeck, turn } = useGameInfo();
+    const { lastTurnDiscarded, numberDiscards, tilesInDeck, turn } = useGameInfo();
     const dispatchGameInfo = useGameInfoDispatch();
 
     const discardHand = () => {
-        if ( numberDiscards === 0 ) {
+        if ( ( turn - lastTurnDiscarded ) < 5 ) {
             return dispatchToast( {
                 type: 'addToast',
                 payload: {
-                    message: 'You cannot discard your current hand. You already used the maximum amount of discards',
+                    message: "You cannot discard your current hand. It hasn't been 5 turns to discard your hand again",
                     type: ToastType.ERROR
                 }
             } );
@@ -35,20 +35,15 @@ export const useDiscardHand = () => {
             } );
         }
 
-        dispatchHand( {
-            type: 'discardHand',
-            payload: {
-                numberDiscards,
-                tilesInDeck
-            }
-        } );
+        dispatchHand( { type: 'discardHand' } );
 
         dispatchGameInfo( {
             type: 'discardHand',
             payload: {
                 tilesInDeck: tilesInDeck - TILES_PER_HAND,
+                numberDiscards: numberDiscards + 1,
+                lastTurnDiscarded: turn,
                 turn: turn + 1,
-                numberDiscards: numberDiscards - 1
             }
         } );
     };

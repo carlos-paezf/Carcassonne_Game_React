@@ -15,7 +15,8 @@ export const GameInfo: FC = () => {
                 <tr>
                     <th>Tiles in Deck</th>
                     <th>Actual Turn</th>
-                    <th>Number of discards remaining</th>
+                    <th>Number of discards played</th>
+                    <th>Last turn discarded</th>
                     <th>Score</th>
                 </tr>
             </thead>
@@ -25,6 +26,7 @@ export const GameInfo: FC = () => {
                     <td>{ gameInfo.tilesInDeck }</td>
                     <td>{ gameInfo.turn }</td>
                     <td>{ gameInfo.numberDiscards }</td>
+                    <td>{ gameInfo.lastTurnDiscarded }</td>
                     <td>{ gameInfo.score }</td>
                 </tr>
             </tbody>

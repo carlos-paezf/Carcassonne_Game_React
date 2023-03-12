@@ -36,15 +36,17 @@ const actionHandlers: IActionHandlers<IGameInfo> = {
         ...gameInfo,
         tilesInDeck: payload.tilesInDeck!,
         settingsGame: payload.settingsGame!,
-        numberDiscards: 5,
+        lastTurnDiscarded: 0,
+        numberDiscards: 0,
         turn: 0,
-        score: 0
+        score: 0,
     } ),
     discardHand: ( gameInfo, payload ) => ( {
         ...gameInfo,
         tilesInDeck: payload.tilesInDeck!,
         turn: payload.turn!,
-        numberDiscards: payload.numberDiscards!
+        numberDiscards: payload.numberDiscards!,
+        lastTurnDiscarded: payload.lastTurnDiscarded!
     } ),
     playTile: ( gameInfo, payload ) => ( {
         ...gameInfo,
