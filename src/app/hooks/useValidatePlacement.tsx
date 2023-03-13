@@ -1,7 +1,5 @@
 import { TileType, ToastType } from "../constants";
 import { Tile } from "../game-logic/tile";
-import { useBoard } from "../reducer/board-reducer";
-import { useGameInfo } from "../reducer/game-reducer";
 import { useToastDispatch } from "../reducer/toast-reducer";
 import { useTileAndNeighborhood } from "./useTileAndNeighborhood";
 
@@ -14,8 +12,6 @@ import { useTileAndNeighborhood } from "./useTileAndNeighborhood";
  * @returns A function that takes in a tile, row, and column and returns a boolean.
  */
 export const useValidatePlacement = () => {
-    const board = useBoard();
-    const { settingsGame: { boardSize } } = useGameInfo();
     const dispatchToast = useToastDispatch();
     const { getTile, getNeighborhood } = useTileAndNeighborhood();
 
