@@ -11,7 +11,7 @@ import { useToastDispatch } from "../reducer/toast-reducer";
 export const useDiscardHand = () => {
     const dispatchHand = useHandDispatch();
     const dispatchToast = useToastDispatch();
-    const { lastTurnDiscarded, numberDiscards, tilesInDeck, turn } = useGameInfo();
+    const { lastTurnDiscarded, tilesPlayed, numberDiscards, tilesInDeck, turn } = useGameInfo();
     const dispatchGameInfo = useGameInfoDispatch();
 
     const discardHand = () => {
@@ -41,6 +41,7 @@ export const useDiscardHand = () => {
             type: 'discardHand',
             payload: {
                 tilesInDeck: tilesInDeck - TILES_PER_HAND,
+                tilesPlayed: tilesPlayed + TILES_PER_HAND,
                 numberDiscards: numberDiscards + 1,
                 lastTurnDiscarded: turn,
                 turn: turn + 1,
