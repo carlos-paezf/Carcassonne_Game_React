@@ -16,7 +16,7 @@ import { useValidatePlacement } from "./useValidatePlacement";
  * @returns The playTile function is being returned.
  */
 export const usePlayTile = () => {
-    const { tilesInDeck, turn, score } = useGameInfo();
+    const { tilesInDeck, tilesPlayed, turn, score } = useGameInfo();
     const dispatchBoard = useBoardDispatch();
     const dispatchHand = useHandDispatch();
     const dispatchToast = useToastDispatch();
@@ -57,6 +57,7 @@ export const usePlayTile = () => {
             type: 'playTile',
             payload: {
                 tilesInDeck: ( tilesInDeck === 0 ) ? 0 : tilesInDeck - 1,
+                tilesPlayed: tilesPlayed + 1,
                 turn: turn + 1,
                 score: score + increaseScore
             }
