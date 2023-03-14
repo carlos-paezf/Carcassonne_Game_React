@@ -12,6 +12,6 @@ export const TileComponent: FC<ITile> = ( tile ) => {
     };
 
     return (
-        <button className="tile btn" id={ `${ tile.idx }` } onClick={ handleOpenFormTile }>{ tile.tile.toString }</button>
+        <button className={ `tile btn ${ tile.tile.type }` } id={ `${ tile.idx }` } onClick={ handleOpenFormTile }>{ tile.tile.toString }</button>
     );
 };

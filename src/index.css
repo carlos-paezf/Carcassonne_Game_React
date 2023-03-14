@@ -162,7 +162,7 @@ input {
 
 .board-game td {
     text-align: center;
-    height: 75px;
+    height: 55px;
 }
 
 .empty {
@@ -185,18 +185,6 @@ input {
     position: relative;
     font-size: 14px;
     color: white;
-}
-
-.fill.ABBEY {
-    background: rgb(12, 70, 1);
-}
-
-.fill.CITY {
-    background: rgb(0, 0, 68);
-}
-
-.fill.ROAD {
-    background: rgb(88, 32, 0);
 }
 
 /* 
@@ -247,6 +235,20 @@ input {
     height: 50px;
     padding: 1rem 0;
     margin: 10px 1rem;
+}
+
+/* ------------------------------------------------------------------- */
+
+.ABBEY {
+    background: rgb(12, 70, 1);
+}
+
+.CITY {
+    background: rgb(0, 0, 68);
+}
+
+.ROAD {
+    background: rgb(88, 32, 0);
 }
 
 /* ------------------------------------------------------------------- */
