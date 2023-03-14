@@ -33,9 +33,9 @@ export enum TileType {
 
 
 export const tileInterval = {
-    road: ( 8 / 15 ),
+    road: ( 9 / 15 ),
     city: ( 4 / 15 ),
-    abbey: ( 3 / 15 )
+    abbey: ( 2 / 15 )
 };
 
 
