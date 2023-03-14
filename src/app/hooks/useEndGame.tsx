@@ -51,19 +51,18 @@ export const useEndGame = () => {
      * @returns a boolean value.
      */
     const shouldEndGame = () => {
-        if ( tilesInDeck > 0 || tilesInHand.length > TILES_PER_HAND ) return false;
+        if ( tilesInDeck > 3 || tilesInHand.length > TILES_PER_HAND ) return false;
         if ( tilesInDeck === 0 && tilesInHand.length === 0 ) return true;
+
+        if ( tilesInHand.some( tile => tile.tile.type !== TileType.ROAD ) ) return false;
 
         for ( const emptySpace of getEmptySpacesOnBoard() ) {
             const neighborhood = getNeighborhood( emptySpace[ 0 ], emptySpace[ 1 ] );
 
-            if ( tilesInHand.some( tile => tile.tile.type !== TileType.ROAD ) ) return false;
-
             for ( const tileInHand of tilesInHand ) {
                 if ( tileInHand.tile.type === TileType.ROAD ) {
-                    return !areThereValidMoves( neighborhood );
+                    if ( areThereValidMoves( neighborhood ) ) return false;
                 }
-                return false;
             }
         }
 
