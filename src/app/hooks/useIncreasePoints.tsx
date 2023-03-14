@@ -35,7 +35,13 @@ export const useIncreasePoints = () => {
 
             case IncrementType.BY_CITY_CHAIN:
                 tilesNeighborhood.forEach( ( nt ) => {
-                    if ( getTile( nt[ 0 ], nt[ 1 ] )?.type === TileType.CITY ) score += TilePoint.CHAIN;
+                    if ( getTile( nt[ 0 ], nt[ 1 ] )?.type === TileType.CITY ) {
+                        const isNewChain = getNeighborhood( nt[ 0 ], nt[ 1 ] )
+                            .every( nc => getTile( nc[ 0 ], nc[ 1 ] )?.type !== TileType.CITY );
+                        if ( isNewChain ) score += TilePoint.CHAIN;
+
+                        score += TilePoint.CHAIN;
+                    };
                 } );
                 break;
 
