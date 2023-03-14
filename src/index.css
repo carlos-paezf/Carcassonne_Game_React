@@ -240,15 +240,31 @@ input {
 /* ------------------------------------------------------------------- */
 
 .ABBEY {
-    background: rgb(12, 70, 1);
+    background: rgb(20, 119, 0);
 }
 
 .CITY {
-    background: rgb(0, 0, 68);
+    background: rgb(0, 0, 109);
 }
 
 .ROAD {
     background: rgb(88, 32, 0);
+}
+
+.THREE_WAY {
+    background: rgb(48, 0, 0);
+}
+
+.RIGHT_LEFT {
+    background: rgb(88, 92, 0);
+}
+
+.UP_DOWN {
+    background: rgb(158, 92, 0);
+}
+
+.CORNER {
+    background: rgb(180, 57, 0);
 }
 
 /* ------------------------------------------------------------------- */
