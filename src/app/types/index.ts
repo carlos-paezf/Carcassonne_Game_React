@@ -4,6 +4,7 @@ import { Tile } from "../game-logic/tile";
 
 export interface IGameInfo {
     tilesInDeck: number;
+    tilesPlayed: number;
     turn: number;
     lastTurnDiscarded: number;
     numberDiscards: number;
