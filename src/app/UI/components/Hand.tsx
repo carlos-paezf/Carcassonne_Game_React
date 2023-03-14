@@ -1,9 +1,9 @@
 import { FC, useEffect } from "react";
+import { TILES_PER_HAND } from "../../constants";
 import { useDiscardHand } from "../../hooks/useDiscardHand";
+import { useGameInfo } from "../../reducer/game-reducer";
 import { useHand, useHandDispatch } from "../../reducer/hand-reducer";
 import { TileComponent } from "./Tile";
-import { useGameInfo } from "../../reducer/game-reducer";
-import { TILES_PER_HAND } from "../../constants";
 
 
 export const Hand: FC = () => {
@@ -12,7 +12,6 @@ export const Hand: FC = () => {
     const { discardHand } = useDiscardHand();
     const { turn, lastTurnDiscarded, tilesInDeck, settingsGame: { boardSize } } = useGameInfo();
 
-
     const handleDiscardHand = () => {
         return discardHand();
     };
@@ -20,7 +19,6 @@ export const Hand: FC = () => {
     const restartHand = () => {
         if ( turn === 0 ) dispatchHand( { type: 'initialHand' } );
     };
-
 
     useEffect( () => {
         restartHand();
