@@ -3,8 +3,10 @@ import { IGameInfo } from "../types";
 
 export const initialGameInfo: IGameInfo = {
     tilesInDeck: 0,
+    tilesPlayed: 0,
     turn: 0,
     numberDiscards: 5,
+    lastTurnDiscarded: 0,
     score: 0,
     settingsGame: {
         playerName: '',
