@@ -35,6 +35,7 @@ const actionHandlers: IActionHandlers<IGameInfo> = {
     startGame: ( gameInfo, payload ) => ( {
         ...gameInfo,
         tilesInDeck: payload.tilesInDeck!,
+        tilesPlayed: 0,
         settingsGame: payload.settingsGame!,
         lastTurnDiscarded: 0,
         numberDiscards: 0,
@@ -51,6 +52,7 @@ const actionHandlers: IActionHandlers<IGameInfo> = {
     playTile: ( gameInfo, payload ) => ( {
         ...gameInfo,
         tilesInDeck: payload.tilesInDeck!,
+        tilesPlayed: payload.tilesPlayed!,
         turn: payload.turn!,
         score: payload.score!
     } )
