@@ -1,6 +1,6 @@
 import { FC, useContext } from "react";
-import { ITile } from "../../types";
 import { FormTileContext } from "../../context/form-tile-context";
+import { ITile } from "../../types";
 
 
 export const TileComponent: FC<ITile> = ( tile ) => {
