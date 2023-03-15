@@ -3,6 +3,7 @@ import { useBoard } from "../reducer/board-reducer";
 import { useGameInfo } from "../reducer/game-reducer";
 import { useHand } from "../reducer/hand-reducer";
 import { useTileAndNeighborhood } from "./useTileAndNeighborhood";
+import { useValidatePlacement } from "./useValidatePlacement";
 
 
 export const useEndGame = () => {
@@ -10,6 +11,7 @@ export const useEndGame = () => {
     const { tilesInDeck, settingsGame: { boardSize } } = useGameInfo();
     const tilesInHand = useHand();
     const { getTile, getNeighborhood } = useTileAndNeighborhood();
+    const { areThereValidMoves } = useValidatePlacement();
 
 
     /**
@@ -29,18 +31,6 @@ export const useEndGame = () => {
         }
 
         return spaces;
-    };
-
-
-    /**
-     * "If there is a tile in the neighborhood that is a road, then return true."
-     * 
-     * The function is called like this:
-     * @param {number[][]} neighborhood - number[][]
-     * @returns A boolean value.
-     */
-    const areThereValidMoves = ( neighborhood: number[][] ) => {
-        return neighborhood.some( ( nt ) => getTile( nt[ 0 ], nt[ 1 ] )?.type === TileType.ROAD );
     };
 
 

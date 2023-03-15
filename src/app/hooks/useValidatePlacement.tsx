@@ -17,6 +17,18 @@ export const useValidatePlacement = () => {
 
 
     /**
+     * "If there is a tile in the neighborhood that is a road, then return true."
+     * 
+     * The function is called like this:
+     * @param {number[][]} neighborhood - number[][]
+     * @returns A boolean value.
+     */
+    const areThereValidMoves = ( neighborhood: number[][] ) => {
+        return neighborhood.some( ( nt ) => getTile( nt[ 0 ], nt[ 1 ] )?.type === TileType.ROAD );
+    };
+
+
+    /**
      * "The function returns an error that would occur if the tile
      * were placed at the given row and column."
      * 
@@ -71,5 +83,5 @@ export const useValidatePlacement = () => {
     };
 
 
-    return { validatePlacement };
+    return { areThereValidMoves, validatePlacement };
 };
