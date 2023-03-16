@@ -21,3 +21,7 @@ Con respecto a los requerimientos obligatorios acerca de la aplicación, cumplí
 3. El jugador puede poner 1 ficha en el tablero por turno.
 
    El usuario puede colocar una ficha en el tablero de juego siempre y cuando tenga fichas en su mano o mazo. Sin embargo la colocación deber ser válida, considerando el tipo de mosaico y sus vecinos adyacentes.
+
+4. Al comienzo del juego, el jugador obtiene 4 fichas random para elegir y se le repartirá una nueva ficha cada turno, reemplazando la ficha jugada anteriormente.
+
+   Una vez el usuario define el tamaño del tablero e inicia el juego, recibe 4 fichas random, las cuales son restadas del total disponible de fichas. La mano del usuario se actualizará con nuevas fichas bajo las siguientes circunstancias: reiniciando el juego, actualizando el tamaño del tablero, descartando la mano, o jugando un ficha.

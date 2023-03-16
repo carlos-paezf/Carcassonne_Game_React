@@ -21,3 +21,7 @@ I have met all of the mandatory requirements of the application. In the followin
 3. The player can put one (`1`) tile on the board per turn.
 
    The user may place one (1) tile on the game board as long as they have tiles in their hand or deck. However, the placement must be valid, considering the tile type and its adjacent neighbors.
+
+4. At the start of the game the player gets four (4) random tiles to select from and will be dealt a new tile each turn, replacing the previously played tile.
+
+   Once the user defines the board size an starts the game, they receive four (4) random tiles, which are then subtracted from the total available tiles. The user's hand will be updated with new tiles under the following circumstances: restarting the game, updating the board size, discarding the hand, or playing a tile.
