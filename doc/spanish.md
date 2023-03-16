@@ -13,3 +13,7 @@ Con respecto a los requerimientos obligatorios acerca de la aplicación, cumplí
 1. El número total de piezas que el usuario puede jugar es `N^2`, donde `N` es el largo de uno de los lados del tablero.
 
    El número de piezas en el juego es determinado por la multiplicación del valor ingresado por el usuario como tamaño del tablero, por si mismo. Las fichas son usadas en 3 secciones del juego: El mazo de fichas, la mano del jugador, y el tablero de juego. La división inicial de las fichas es la siguiente: 1 ficha en el centro del tablero, 4 son entregadas a cada jugado en su mano inicial, y las fichas restantes serán puestas en el mazo.
+
+2. El tablero debe ser un cuadrado de `11 x 11`.
+
+   Cuando el usuario carga la página del juego, el campo de ingreso del tamaño del tablero tendrá un valor por defecto de `11`. Sin embargo, el usuario puede ajustar el valor con cualquier número par entre `3` y `n` como lo desee.

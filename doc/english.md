@@ -13,3 +13,7 @@ I have met all of the mandatory requirements of the application. In the followin
 1. The total number of tiles which the player can play is `N^2`, where `N` is the length of a side of the board.
 
    The number of tiles in the game is determined by multiplying the value entered by the user as the board size by itself. The tiles are used in three (3) different sections of the game: The deck of tiles, the player's hand, and the game board. The initial distribution of the tiles is as follows: one (1) tile in the center of the board, four (4) are given to each player as their starting hand, and the remaining tiles are placed in the deck.
+
+2. The board size must be a `11 x 11` square.
+
+   When the user loads the game page, the board size input field will have a default value of `11`. However, the user can adjust the value to any odd numbers between `3` and `n` as desired.
