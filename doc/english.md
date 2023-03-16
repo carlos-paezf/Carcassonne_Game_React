@@ -25,3 +25,7 @@ I have met all of the mandatory requirements of the application. In the followin
 4. At the start of the game the player gets four (4) random tiles to select from and will be dealt a new tile each turn, replacing the previously played tile.
 
    Once the user defines the board size an starts the game, they receive four (4) random tiles, which are then subtracted from the total available tiles. The user's hand will be updated with new tiles under the following circumstances: restarting the game, updating the board size, discarding the hand, or playing a tile.
+
+5. The player will never know what tile will be the next.
+
+   The tiles have a generation percentage based on their type, which is explained in point 14 of this list. Due to the random generation of tiles, the user cannot predict which tile will appear in their hand.

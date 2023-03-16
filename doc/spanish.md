@@ -25,3 +25,7 @@ Con respecto a los requerimientos obligatorios acerca de la aplicación, cumplí
 4. Al comienzo del juego, el jugador obtiene 4 fichas random para elegir y se le repartirá una nueva ficha cada turno, reemplazando la ficha jugada anteriormente.
 
    Una vez el usuario define el tamaño del tablero e inicia el juego, recibe 4 fichas random, las cuales son restadas del total disponible de fichas. La mano del usuario se actualizará con nuevas fichas bajo las siguientes circunstancias: reiniciando el juego, actualizando el tamaño del tablero, descartando la mano, o jugando un ficha.
+
+5. El jugador nunca sabrá qué ficha será la siguiente.
+
+   Las fichas tienen un porcentaje de aparición basado en su tipo, tal como se explica en el punto 14 de este listado. Mediante la generación aleatoria de fichas, el usuario no puede predecir cual ficha que se aparecerá en su mano.
