@@ -17,3 +17,7 @@ Con respecto a los requerimientos obligatorios acerca de la aplicación, cumplí
 2. El tablero debe ser un cuadrado de `11 x 11`.
 
    Cuando el usuario carga la página del juego, el campo de ingreso del tamaño del tablero tendrá un valor por defecto de `11`. Sin embargo, el usuario puede ajustar el valor con cualquier número par entre `3` y `n` como lo desee.
+
+3. El jugador puede poner 1 ficha en el tablero por turno.
+
+   El usuario puede colocar una ficha en el tablero de juego siempre y cuando tenga fichas en su mano o mazo. Sin embargo la colocación deber ser válida, considerando el tipo de mosaico y sus vecinos adyacentes.

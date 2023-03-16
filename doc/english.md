@@ -17,3 +17,7 @@ I have met all of the mandatory requirements of the application. In the followin
 2. The board size must be a `11 x 11` square.
 
    When the user loads the game page, the board size input field will have a default value of `11`. However, the user can adjust the value to any odd numbers between `3` and `n` as desired.
+
+3. The player can put one (`1`) tile on the board per turn.
+
+   The user may place one (1) tile on the game board as long as they have tiles in their hand or deck. However, the placement must be valid, considering the tile type and its adjacent neighbors.
