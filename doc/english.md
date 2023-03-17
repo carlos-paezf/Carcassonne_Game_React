@@ -53,3 +53,7 @@ I have met all of the mandatory requirements of the application. In the followin
 11. Road tiles score 1 point per tile and can only be placed in positions adjacent to road tiles, so the chain keeps getting larger. The game starts with a single road tile in the center.
 
     Road tiles must be placed adjacent to other road tiles on the board. This rule also serves to determine if there are no valid positions left for a player to place a tile and thus trigger the end of the game.
+
+12. Abbey tiles score 1 point per tile surrounding the abbey tile, so the maximum score a player can get is 8 if an abbey tile is completely surrounded by other tiles. Abbeys must be place adjacent to any other tile.
+
+    The von Neumann Neighborhoods algorithm is used with a radius of 2, but cells that are more than 1 row or 1 column away are discarded. When an abbey tile is played, it scores points for its adjacent neighbors, and the score is updated each time another tile is placed next to it.

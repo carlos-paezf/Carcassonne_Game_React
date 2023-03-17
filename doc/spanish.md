@@ -53,3 +53,7 @@ Con respecto a los requerimientos obligatorios acerca de la aplicación, cumplí
 11. Las fichas de carretera obtienen 1 punto por pieza y solo se pueden colocar en posiciones adyacentes a las fichas de carretera, por lo que la cadena sigue creciendo. El juego comienza con una sola ficha de camino en el centro.
 
     Las fichas de camino deben colocarse adyacentes a otras fichas de camino en el tablero. Esta regla también sirve para determinar si no quedan posiciones válidas para que un jugador coloque una ficha y así desencadenar el final del juego.
+
+12. Las piezas de abadía obtienen 1 punto por mosaico que rodea la ficha de abadía, por lo que la puntuación máxima que un jugador puede obtener es 8 si una pieza de abadía está completamente rodeado por otras fichas. Las abadías deben colocarse adyacentes a cualquier otra ficha.
+
+    El algoritmo von Neumann Neighborhoods se usa con un radio de 2, pero las celdas que están a más de 1 fila o 1 columna de distancia se descartan. Cuando se juega una ficha de abadía, se otorgan puntos a sus vecinos adyacentes y la puntuación se actualiza cada vez que se coloca otra ficha junto a ella.
