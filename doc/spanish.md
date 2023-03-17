@@ -33,3 +33,7 @@ Con respecto a los requerimientos obligatorios acerca de la aplicación, cumplí
 6. El jugador debería poder descartar su mano cada 5 turnos
 
    Cuando el juego empieza, el jugador debe esperar por 5 turnos antes de que pueda descartar su mano. Esta opción permanece disponible mientras el jugador no la use y el mazo tenga un mínimo de 4 fichas. Una vez el usuario haya usado esta opción, debe esperar por otros 5 turnos antes de que lo pueda usar otra vez. Adicionalmente, esta opción desaparece cuando el usuario tiene menos de 4 fichas en su mano. Cada acción de descarte remueve 4 fichas de la mano del usuario.
+
+7. El juego es jugado hasta que el jugador no pueda ubicar una ficha, esto a causa de que no haya espacios vacíos o no hayan ubicaciones validas para las fichas en la mano.
+
+   El jugador puede seguir jugando mientras hayan espacios libres y validos en el tablero para las fichas que tenga en la mano. Si el usuario no tiene algún lugar valido en el tablero pero cuente con la habilidad de descartar su mano, podrá seguir jugando una vez que use esta opción y tenga fichas que puedan ser ubicadas correctamente en el tablero. Si el usuario no tiene esta opción habilitada, se mostrará un mensaje de fin de juego y las estadísticas generales de la partida.
