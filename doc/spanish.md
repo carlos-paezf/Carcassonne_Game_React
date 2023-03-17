@@ -48,4 +48,8 @@ Con respecto a los requerimientos obligatorios acerca de la aplicación, cumplí
 
 10. Una cadena de fichas es un conjunto de piezas donde cada ficha es adyacente, al menos, a otra ficha en la cadena.
 
-   Al examinar los vecinos adyacentes de una ficha, el juego determina si una ciudad se encadena, lo que permite a los jugadores ganar puntos extra por sus construcciones. Este mecanismo alienta a los jugadores a colocar estratégicamente sus fichas y conectarlos con las funciones existentes en el tablero.
+    Al examinar los vecinos adyacentes de una ficha, el juego determina si una ciudad se encadena, lo que permite a los jugadores ganar puntos extra por sus construcciones. Este mecanismo alienta a los jugadores a colocar estratégicamente sus fichas y conectarlos con las funciones existentes en el tablero.
+
+11. Las fichas de carretera obtienen 1 punto por pieza y solo se pueden colocar en posiciones adyacentes a las fichas de carretera, por lo que la cadena sigue creciendo. El juego comienza con una sola ficha de camino en el centro.
+
+    Las fichas de camino deben colocarse adyacentes a otras fichas de camino en el tablero. Esta regla también sirve para determinar si no quedan posiciones válidas para que un jugador coloque una ficha y así desencadenar el final del juego.

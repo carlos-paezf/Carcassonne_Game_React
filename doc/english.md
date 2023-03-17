@@ -48,4 +48,8 @@ I have met all of the mandatory requirements of the application. In the followin
 
 10. A chain of tiles is a set of tiles where every tile is adjacent to at least one tile on the chain.
 
-   By examining the adjacent neighbors of a tile, the game determines whether a city chain, allowing players to earn extra points for their constructions. This mechanism encourages players to strategically place their tiles and connect them with existing features on the board.
+    By examining the adjacent neighbors of a tile, the game determines whether a city chain, allowing players to earn extra points for their constructions. This mechanism encourages players to strategically place their tiles and connect them with existing features on the board.
+
+11. Road tiles score 1 point per tile and can only be placed in positions adjacent to road tiles, so the chain keeps getting larger. The game starts with a single road tile in the center.
+
+    Road tiles must be placed adjacent to other road tiles on the board. This rule also serves to determine if there are no valid positions left for a player to place a tile and thus trigger the end of the game.
