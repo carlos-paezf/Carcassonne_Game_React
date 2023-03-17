@@ -41,3 +41,7 @@ Con respecto a los requerimientos obligatorios acerca de la aplicación, cumplí
 8. Si el jugador no puede jugar una ficha de su mano, el juego terminará a menos que el descarte este disponible, en cuyo caso, el jugador puede realizar un descarte.
 
    Como se mencionaba en el punto anterior, mientras el jugador cuente con la opción de hacer el descarte de su mano, el juego podrá continuar si alguna de las nuevas fichas tienen posiciones viables en el tablero.
+
+9. El juego usas el algoritmo `von Neumann Neighborhoods` para adyacencia: Una pieza se dice ser adyacente a otra ficha si estas tienen una distancia Manhattan de 1 unidad entre ellas.
+
+   El juego evalúa las piezas adyacentes de cada ficha cuando se coloca en el tablero. Las coordenadas (fila, columna) de la ficha se utilizan para determinar sus piezas vecinos. El algoritmo comprueba si hay una ficha en cada posición adyacente y si es compatible con el tipo de ficha nueva. Al contar los incrementos de puntos, el algoritmo calcula la distancia de Manhattan para obtener vecinos diagonales, pero se excluyen las posiciones que están a más de dos filas o dos columnas de distancia.
