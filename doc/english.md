@@ -45,3 +45,7 @@ I have met all of the mandatory requirements of the application. In the followin
 9. This game uses `von Neumann Neighborhoods` for adjacency: A tile is said to be adjacent to another tile if they have a Manhattan distance of 1 unit form each other.
 
    The game evaluates each tile's adjacent pieces when it is placed on the board. The (row, column) coordinates of the tile are used to determine its neighboring tiles. The algorithm checks whether there is a tile in each adjacent position and whether it is compatible with the new tile's type. When counting point increments, the algorithm calculates the Manhattan distance to obtain diagonal neighbors, but positions that are more than two (2) rows or two (2) columns away are excluded.
+
+10. A chain of tiles is a set of tiles where every tile is adjacent to at least one tile on the chain.
+
+   By examining the adjacent neighbors of a tile, the game determines whether a city chain, allowing players to earn extra points for their constructions. This mechanism encourages players to strategically place their tiles and connect them with existing features on the board.

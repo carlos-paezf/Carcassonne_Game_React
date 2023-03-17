@@ -45,3 +45,7 @@ Con respecto a los requerimientos obligatorios acerca de la aplicación, cumplí
 9. El juego usas el algoritmo `von Neumann Neighborhoods` para adyacencia: Una pieza se dice ser adyacente a otra ficha si estas tienen una distancia Manhattan de 1 unidad entre ellas.
 
    El juego evalúa las piezas adyacentes de cada ficha cuando se coloca en el tablero. Las coordenadas (fila, columna) de la ficha se utilizan para determinar sus piezas vecinos. El algoritmo comprueba si hay una ficha en cada posición adyacente y si es compatible con el tipo de ficha nueva. Al contar los incrementos de puntos, el algoritmo calcula la distancia de Manhattan para obtener vecinos diagonales, pero se excluyen las posiciones que están a más de dos filas o dos columnas de distancia.
+
+10. Una cadena de fichas es un conjunto de piezas donde cada ficha es adyacente, al menos, a otra ficha en la cadena.
+
+   Al examinar los vecinos adyacentes de una ficha, el juego determina si una ciudad se encadena, lo que permite a los jugadores ganar puntos extra por sus construcciones. Este mecanismo alienta a los jugadores a colocar estratégicamente sus fichas y conectarlos con las funciones existentes en el tablero.
