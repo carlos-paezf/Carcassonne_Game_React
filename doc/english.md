@@ -29,3 +29,7 @@ I have met all of the mandatory requirements of the application. In the followin
 5. The player will never know what tile will be the next.
 
    The tiles have a generation percentage based on their type, which is explained in point 14 of this list. Due to the random generation of tiles, the user cannot predict which tile will appear in their hand.
+
+6. The player should be able to discard their hand every five (5) turns.
+
+   When the game begins, the player must wait for five (5) turns before they can to discard their hand. This option will remain available as long as the user does not use it and the deck has a minimum of four (4) tiles. Once the user has used this option, they must wait for another five (5) turns before they can use it again. Additionally, this option disappears when the user has less than four tiles in their hand. Each discard action removes four tiles from the user's hand.

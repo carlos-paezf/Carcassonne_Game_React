@@ -29,3 +29,7 @@ Con respecto a los requerimientos obligatorios acerca de la aplicación, cumplí
 5. El jugador nunca sabrá qué ficha será la siguiente.
 
    Las fichas tienen un porcentaje de aparición basado en su tipo, tal como se explica en el punto 14 de este listado. Mediante la generación aleatoria de fichas, el usuario no puede predecir cual ficha que se aparecerá en su mano.
+
+6. El jugador debería poder descartar su mano cada 5 turnos
+
+   Cuando el juego empieza, el jugador debe esperar por 5 turnos antes de que pueda descartar su mano. Esta opción permanece disponible mientras el jugador no la use y el mazo tenga un mínimo de 4 fichas. Una vez el usuario haya usado esta opción, debe esperar por otros 5 turnos antes de que lo pueda usar otra vez. Adicionalmente, esta opción desaparece cuando el usuario tiene menos de 4 fichas en su mano. Cada acción de descarte remueve 4 fichas de la mano del usuario.
