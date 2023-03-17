@@ -57,3 +57,7 @@ I have met all of the mandatory requirements of the application. In the followin
 12. Abbey tiles score 1 point per tile surrounding the abbey tile, so the maximum score a player can get is 8 if an abbey tile is completely surrounded by other tiles. Abbeys must be place adjacent to any other tile.
 
     The von Neumann Neighborhoods algorithm is used with a radius of 2, but cells that are more than 1 row or 1 column away are discarded. When an abbey tile is played, it scores points for its adjacent neighbors, and the score is updated each time another tile is placed next to it.
+
+13. City tiles score 2 point per tile and can only be placed adjacent to cities, roads and/or abbey tiles. City chains award an extra point for each city in the chain.
+
+    When a city tile is played, the algorithm checks if it is adjacent to any other tile using the von Neumann Neighborhoods algorithm with a radius of 1. If a neighbor is also a city tile, the algorithm tests if it is surrounded by other cities or if it belongs to a chain. If it is not surrounded, then a chain is started, adding 1 point for each tile in the chain, including the new one. If it belongs to a chain, then the tile's score is added plus 1 extra point for being added to the chain.

@@ -57,3 +57,7 @@ Con respecto a los requerimientos obligatorios acerca de la aplicación, cumplí
 12. Las piezas de abadía obtienen 1 punto por mosaico que rodea la ficha de abadía, por lo que la puntuación máxima que un jugador puede obtener es 8 si una pieza de abadía está completamente rodeado por otras fichas. Las abadías deben colocarse adyacentes a cualquier otra ficha.
 
     El algoritmo von Neumann Neighborhoods se usa con un radio de 2, pero las celdas que están a más de 1 fila o 1 columna de distancia se descartan. Cuando se juega una ficha de abadía, se otorgan puntos a sus vecinos adyacentes y la puntuación se actualiza cada vez que se coloca otra ficha junto a ella.
+
+13. Las fichas de ciudad otorgan 2 puntos por ficha y solo se pueden colocar junto a ciudades, caminos y/o fichas de abadía. Las cadenas de ciudades otorgan un punto extra por cada ciudad de la cadena.
+
+    Cuando se juega una ficha de ciudad, el algoritmo verifica si está adyacente a cualquier otra ficha utilizando el algoritmo de Vecindarios de von Neumann con un radio de 1. Si un vecino también es una ficha de ciudad, el algoritmo verifica si está rodeado por otras ciudades o si pertenece a una cadena. Si no está rodeado, se inicia una cadena, agregando 1 punto por cada mosaico en la cadena, incluido el nuevo. Si pertenece a una cadena, entonces se suma la puntuación de la ficha más 1 punto extra por agregarse a la cadena.
