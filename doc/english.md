@@ -37,3 +37,7 @@ I have met all of the mandatory requirements of the application. In the followin
 7. The game is played until the player can no longer play a tile, either because there are no empty places or there are no valid placements for the tiles at hand.
 
    The player can continue playing as long as there are empty and valid spaces on the board for the tiles they have in hand. If the user does not has any valid places on the board but has the ability to discard their hand, they can continue playing once they have used the option and have tiles that can be correctly placed on the board. If the user does not have this option enabled, a message with the phrase "End Game" and the general statistics about the game will be displayed.
+
+8. If the player cannot play a tile in their hand, the game, will be end unless the this discard is available, in which case, the player can do a discard
+
+   As mentioned in the previous point, if the player has the option to discard their hand, the game can continue if any of the new tiles have viable spaces on the board.

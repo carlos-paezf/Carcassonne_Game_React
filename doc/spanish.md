@@ -37,3 +37,7 @@ Con respecto a los requerimientos obligatorios acerca de la aplicación, cumplí
 7. El juego es jugado hasta que el jugador no pueda ubicar una ficha, esto a causa de que no haya espacios vacíos o no hayan ubicaciones validas para las fichas en la mano.
 
    El jugador puede seguir jugando mientras hayan espacios libres y validos en el tablero para las fichas que tenga en la mano. Si el usuario no tiene algún lugar valido en el tablero pero cuente con la habilidad de descartar su mano, podrá seguir jugando una vez que use esta opción y tenga fichas que puedan ser ubicadas correctamente en el tablero. Si el usuario no tiene esta opción habilitada, se mostrará un mensaje de fin de juego y las estadísticas generales de la partida.
+
+8. Si el jugador no puede jugar una ficha de su mano, el juego terminará a menos que el descarte este disponible, en cuyo caso, el jugador puede realizar un descarte.
+
+   Como se mencionaba en el punto anterior, mientras el jugador cuente con la opción de hacer el descarte de su mano, el juego podrá continuar si alguna de las nuevas fichas tienen posiciones viables en el tablero.
