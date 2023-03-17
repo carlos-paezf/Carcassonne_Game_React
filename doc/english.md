@@ -65,3 +65,7 @@ I have met all of the mandatory requirements of the application. In the followin
 14. Tile dealing should not be completely random. Roads should be more likely to appear than cities, and abbeys should be scarce. No fifteen (15) turns can happen without an abbey and at least three (3) cities. How this is done is up to the implementor.
 
     The game implements a probability system for the appearance of tiles, which is represented as fractions. For roads, the probability is 9/15, for cities it's 3/15, and for abbeys it's 1/5. To generate a new tile, a random number between 0 and 1 is generated, and the probabilities for each tile are summed up. Then, the algorithm checks if the random number falls within a specific range for each tile. If the random number is less than the probability for a road tile, a road tile is returned. If the random number is less than the sum of the probabilities for road and city tiles, a city tile is returned. Otherwise, an abbey tile is returned.
+
+## Bonus
+
+- Allow boards of different odd sizes.

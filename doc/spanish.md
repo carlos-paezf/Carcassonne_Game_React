@@ -65,3 +65,7 @@ Con respecto a los requerimientos obligatorios acerca de la aplicación, cumplí
 14. El reparto de fichas no debe ser completamente aleatorio. Debería haber más caminos que ciudades, y las abadías deberían ser escasas. No pueden ocurrir quince (15) turnos sin una abadía y al menos tres (3) ciudades. Cómo se hace esto depende del implementador.
 
     El juego implementa un sistema de probabilidad para la aparición de fichas, que se representa como fracciones. Para carreteras, la probabilidad es 9/15, para ciudades es 3/15 y para abadías es 1/5. Para generar una nueva ficha, se genera un número aleatorio entre 0 y 1, y se suman las probabilidades de cada ficha. Luego, el algoritmo verifica si el número aleatorio se encuentra dentro de un rango específico para cada ficha. Si el número aleatorio es menor que la probabilidad de una pieza de carretera, se devuelve una pieza de carretera. Si el número aleatorio es menor que la suma de las probabilidades de las losetas de carretera y ciudad, se devuelve una loseta de ciudad. De lo contrario, se devuelve una ficha de abadía.
+
+## Bonus
+
+- Permitir tableros de diferentes tamaños impares
